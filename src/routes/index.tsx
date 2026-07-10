@@ -30,6 +30,7 @@ import {
 
 import heroImg from "@/assets/hero-monitoring.jpg";
 import aboutImg from "@/assets/about-team.jpg";
+import logoAsset from "@/assets/alarmetrop-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
