@@ -245,7 +245,7 @@ function Hero() {
           className="mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Sua segurança{" "}
-          <span className="text-gradient-brand">monitorada 24 horas</span>{" "}
+          <span className="text-white" style={{ textShadow: "0 0 40px rgba(107,179,255,0.5), 0 0 80px rgba(107,179,255,0.25)" }}>monitorada 24 horas</span>{" "}
           por dia.
         </motion.h1>
 
