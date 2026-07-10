@@ -108,14 +108,7 @@ function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8 md:py-4">
         <a href="#inicio" className="flex items-center gap-2.5 shrink-0">
-          <Logo />
-          <span
-            className={`font-display text-lg font-extrabold tracking-tight transition-colors ${
-              scrolled ? "text-brand-dark" : "text-white"
-            }`}
-          >
-            ALARME<span className="text-brand">TROP</span>
-          </span>
+          <Logo scrolled={scrolled} />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
