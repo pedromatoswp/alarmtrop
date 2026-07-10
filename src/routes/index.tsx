@@ -245,7 +245,7 @@ function Hero() {
           className="mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Sua segurança{" "}
-          <span className="text-gradient-brand">monitorada 24 horas</span>{" "}
+          <span className="text-white">monitorada 24 horas</span>{" "}
           por dia.
         </motion.h1>
 
@@ -665,8 +665,8 @@ function Contact() {
               <ContactRow
                 icon={Mail}
                 title="E-mail"
-                lines={["contato@alarmetrop.com.br"]}
-                href="mailto:contato@alarmetrop.com.br"
+                lines={["roberto@alarmetrop.com.br", "alarmetrop@alarmetrop.com.br"]}
+                href="mailto:roberto@alarmetrop.com.br"
               />
 
               <a
