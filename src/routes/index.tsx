@@ -175,12 +175,13 @@ function Navbar() {
   );
 }
 
-function Logo() {
+function Logo({ scrolled = true }: { scrolled?: boolean }) {
   return (
-    <div className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-brand shadow-brand">
-      <Shield className="h-5 w-5 text-white" fill="currentColor" fillOpacity={0.15} />
-      <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
-    </div>
+    <img
+      src={logoAsset.url}
+      alt="Alarmetrop — Sistemas de segurança"
+      className={`h-10 w-auto md:h-12 transition-all ${scrolled ? "" : "brightness-0 invert"}`}
+    />
   );
 }
 
