@@ -665,8 +665,8 @@ function Contact() {
               <ContactRow
                 icon={Mail}
                 title="E-mail"
-                lines={["contato@alarmetrop.com.br"]}
-                href="mailto:contato@alarmetrop.com.br"
+                lines={["roberto@alarmetrop.com.br", "alarmetrop@alarmetrop.com.br"]}
+                href="mailto:roberto@alarmetrop.com.br"
               />
 
               <a
