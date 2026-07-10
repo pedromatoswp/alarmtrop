@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_URL =
-  "https://wa.me/551139665499?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
+  "https://wa.me/5511999730104?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -138,6 +138,20 @@ function Navbar() {
             <span>(11) 3966-5499</span>
           </a>
 
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+              scrolled
+                ? "border-border/70 bg-white/80 text-ink hover:bg-white"
+                : "border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+            }`}
+          >
+            <PhoneCall className="h-4 w-4 text-brand" />
+            <span>+55 11 99973-0104</span>
+          </a>
+
           <div
             className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium ${
               scrolled
@@ -185,9 +199,20 @@ function Navbar() {
                 {n.label}
               </a>
             ))}
-            <div className="flex items-center gap-2 rounded-full border border-border/70 bg-white/90 px-3 py-2 text-sm font-medium text-ink">
-              <PhoneCall className="h-4 w-4 text-brand" />
-              <span>(11) 3966-5499</span>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 rounded-full border border-border/70 bg-white/90 px-3 py-2 text-sm font-medium text-ink">
+                <PhoneCall className="h-4 w-4 text-brand" />
+                <span>(11) 3966-5499</span>
+              </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-white/90 px-3 py-2 text-sm font-medium text-ink"
+              >
+                <PhoneCall className="h-4 w-4 text-brand" />
+                <span>+55 11 99973-0104</span>
+              </a>
             </div>
             <a
               href={WHATSAPP_URL}
@@ -773,16 +798,25 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/95 px-2.5 py-1.5">
-              <img
-                src="/alarmetrop-logo.png"
-                alt="Alarmetrop"
-                className="h-10 w-auto"
-              />
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/60">
-              Segurança eletrônica com monitoramento 24 horas para empresas,
-              condomínios e residências.
-            </p>
+                <img
+                  src="/alarmetrop-logo.png"
+                  alt="Alarmetrop"
+                  className="h-10 w-auto"
+                />
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">
+                Segurança eletrônica com monitoramento 24 horas para empresas,
+                condomínios e residências.
+              </p>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-2 text-sm text-white/90"
+              >
+                <MessageCircle className="h-4 w-4 text-emerald-400" />
+                <span>Contato WhatsApp: +55 11 99973-0104</span>
+              </a>
           </div>
 
           <div>
