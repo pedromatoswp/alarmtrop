@@ -30,6 +30,7 @@ import {
 
 import heroImg from "@/assets/hero-monitoring.jpg";
 import aboutImg from "@/assets/about-team.jpg";
+import logoAsset from "@/assets/alarmetrop-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,7 +43,7 @@ export const Route = createFileRoute("/")({
           "@type": "SecurityService",
           name: "Alarmetrop Ltda",
           image: "/favicon.ico",
-          telephone: "+55 11 0000-0000",
+          telephone: "+55 11 3966-5499",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Rua Adelino Cardana, 293 — Sala 1708",
@@ -60,7 +61,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_URL =
-  "https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
+  "https://wa.me/551139665499?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -107,14 +108,7 @@ function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8 md:py-4">
         <a href="#inicio" className="flex items-center gap-2.5 shrink-0">
-          <Logo />
-          <span
-            className={`font-display text-lg font-extrabold tracking-tight transition-colors ${
-              scrolled ? "text-brand-dark" : "text-white"
-            }`}
-          >
-            ALARME<span className="text-brand">TROP</span>
-          </span>
+          <Logo scrolled={scrolled} />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -181,11 +175,14 @@ function Navbar() {
   );
 }
 
-function Logo() {
+function Logo({ scrolled = true }: { scrolled?: boolean }) {
   return (
-    <div className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-brand shadow-brand">
-      <Shield className="h-5 w-5 text-white" fill="currentColor" fillOpacity={0.15} />
-      <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
+    <div className={`rounded-xl transition-all ${scrolled ? "" : "bg-white/95 px-2 py-1 shadow-brand"}`}>
+      <img
+        src={logoAsset.url}
+        alt="Alarmetrop — Sistemas de segurança"
+        className="h-9 w-auto md:h-10"
+      />
     </div>
   );
 }
@@ -483,7 +480,12 @@ function ServiceCard({
   desc: string;
 }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-brand">
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-brand"
+    >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
@@ -499,11 +501,13 @@ function ServiceCard({
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           {desc}
         </p>
-        <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-brand opacity-0 transition-opacity group-hover:opacity-100">
-          Saiba mais <ArrowRight className="h-3.5 w-3.5" />
+        <div className="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-brand">
+          <MessageCircle className="h-3.5 w-3.5" />
+          Saiba mais no WhatsApp
+          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -649,14 +653,14 @@ function Contact() {
               <ContactRow
                 icon={MessageCircle}
                 title="WhatsApp"
-                lines={["(11) 00000-0000"]}
+                lines={["(11) 3966-5499"]}
                 href={WHATSAPP_URL}
               />
               <ContactRow
                 icon={Phone}
                 title="Telefone"
-                lines={["(11) 0000-0000"]}
-                href="tel:+551100000000"
+                lines={["(11) 3966-5499"]}
+                href="tel:+551139665499"
               />
               <ContactRow
                 icon={Mail}
@@ -739,11 +743,12 @@ function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 md:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2.5">
-              <Logo />
-              <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                ALARME<span className="text-brand">TROP</span>
-              </span>
+            <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/95 px-2.5 py-1.5">
+              <img
+                src={logoAsset.url}
+                alt="Alarmetrop"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               Segurança eletrônica com monitoramento 24 horas para empresas,
