@@ -736,11 +736,12 @@ function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 md:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2.5">
-              <Logo />
-              <span className="font-display text-lg font-extrabold tracking-tight text-white">
-                ALARME<span className="text-brand">TROP</span>
-              </span>
+            <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/95 px-2.5 py-1.5">
+              <img
+                src={logoAsset.url}
+                alt="Alarmetrop"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               Segurança eletrônica com monitoramento 24 horas para empresas,
