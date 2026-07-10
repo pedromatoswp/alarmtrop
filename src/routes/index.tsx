@@ -125,6 +125,31 @@ function Navbar() {
           ))}
         </nav>
 
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="tel:+551139665499"
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+              scrolled
+                ? "border-border/70 bg-white/80 text-ink hover:bg-white"
+                : "border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+            }`}
+          >
+            <PhoneCall className="h-4 w-4" />
+            <span>(11) 3966-5499</span>
+          </a>
+
+          <div
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium ${
+              scrolled
+                ? "border-border/70 bg-white/80 text-ink"
+                : "border-white/20 bg-white/10 text-white backdrop-blur-sm"
+            }`}
+          >
+            <Clock className="h-4 w-4 text-brand" />
+            <span>Monitoramento 24h</span>
+          </div>
+        </div>
+
         <div className="hidden md:block">
           <a
             href={WHATSAPP_URL}
@@ -160,6 +185,10 @@ function Navbar() {
                 {n.label}
               </a>
             ))}
+            <div className="flex items-center gap-2 rounded-full border border-border/70 bg-white/90 px-3 py-2 text-sm font-medium text-ink">
+              <PhoneCall className="h-4 w-4 text-brand" />
+              <span>(11) 3966-5499</span>
+            </div>
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -179,7 +208,7 @@ function Logo({ scrolled = true }: { scrolled?: boolean }) {
   return (
     <div className={`rounded-xl transition-all ${scrolled ? "" : "bg-white/95 px-2 py-1 shadow-brand"}`}>
       <img
-        src={logoAsset.url}
+        src="/alarmetrop-logo.png"
         alt="Alarmetrop — Sistemas de segurança"
         className="h-9 w-auto md:h-10"
       />
@@ -201,25 +230,10 @@ function Hero() {
     <section
       id="inicio"
       ref={ref}
-      className="relative flex min-h-screen items-center overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-black"
     >
-      {/* Parallax background */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 -z-10"
-      >
-        <img
-          src={heroImg}
-          alt="Central de monitoramento Alarmetrop"
-          className="h-full w-full object-cover"
-          width={1920}
-          height={1080}
-        />
-      </motion.div>
-
-      {/* Overlays */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-dark/90 via-brand-dark/70 to-black/85" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(74,158,255,0.25),transparent_60%)]" />
+      {/* Overlays - simplified */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(74,158,255,0.15),transparent_60%)]" />
 
       <motion.div
         style={{ opacity }}
@@ -307,15 +321,30 @@ function Hero() {
             </div>
           ))}
         </motion.div>
+
+        {/* Logo Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="mx-auto mt-16 max-w-2xl rounded-[2rem] border border-white/15 bg-white/5 p-12 text-center shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+        >
+          <div className="mx-auto mb-8 h-40 w-40 overflow-hidden rounded-2xl bg-white/95 p-4 shadow-2xl shadow-black/30 flex items-center justify-center">
+            <img
+              src="/alarmetrop-logo.png"
+              alt="Logo Alarmetrop"
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
+            Proteção inteligente para sua casa e seu negócio
+          </p>
+          <p className="mt-4 text-sm leading-7 text-white/60 sm:text-base">
+            Confiança, monitoramento 24 horas e atendimento imediato em todo o Brasil
+          </p>
+        </motion.div>
       </motion.div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.2em]">Role para explorar</span>
-          <ChevronDown className="h-5 w-5 animate-scroll-hint" />
-        </div>
-      </div>
     </section>
   );
 }
@@ -745,7 +774,7 @@ function Footer() {
           <div>
             <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/95 px-2.5 py-1.5">
               <img
-                src={logoAsset.url}
+                src="/alarmetrop-logo.png"
                 alt="Alarmetrop"
                 className="h-10 w-auto"
               />
