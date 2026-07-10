@@ -177,11 +177,13 @@ function Navbar() {
 
 function Logo({ scrolled = true }: { scrolled?: boolean }) {
   return (
-    <img
-      src={logoAsset.url}
-      alt="Alarmetrop — Sistemas de segurança"
-      className={`h-10 w-auto md:h-12 transition-all ${scrolled ? "" : "brightness-0 invert"}`}
-    />
+    <div className={`rounded-xl transition-all ${scrolled ? "" : "bg-white/95 px-2 py-1 shadow-brand"}`}>
+      <img
+        src={logoAsset.url}
+        alt="Alarmetrop — Sistemas de segurança"
+        className="h-9 w-auto md:h-10"
+      />
+    </div>
   );
 }
 
