@@ -480,7 +480,12 @@ function ServiceCard({
   desc: string;
 }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-brand">
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-brand"
+    >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
@@ -496,11 +501,13 @@ function ServiceCard({
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           {desc}
         </p>
-        <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-brand opacity-0 transition-opacity group-hover:opacity-100">
-          Saiba mais <ArrowRight className="h-3.5 w-3.5" />
+        <div className="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-brand">
+          <MessageCircle className="h-3.5 w-3.5" />
+          Saiba mais no WhatsApp
+          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
