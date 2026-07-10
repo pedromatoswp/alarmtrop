@@ -646,14 +646,14 @@ function Contact() {
               <ContactRow
                 icon={MessageCircle}
                 title="WhatsApp"
-                lines={["(11) 00000-0000"]}
+                lines={["(11) 3966-5499"]}
                 href={WHATSAPP_URL}
               />
               <ContactRow
                 icon={Phone}
                 title="Telefone"
-                lines={["(11) 0000-0000"]}
-                href="tel:+551100000000"
+                lines={["(11) 3966-5499"]}
+                href="tel:+551139665499"
               />
               <ContactRow
                 icon={Mail}
