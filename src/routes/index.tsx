@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
           "@type": "SecurityService",
           name: "Alarmetrop Ltda",
           image: "/favicon.ico",
-          telephone: "+55 11 0000-0000",
+          telephone: "+55 11 3966-5499",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Rua Adelino Cardana, 293 — Sala 1708",
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_URL =
-  "https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
+  "https://wa.me/551139665499?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
