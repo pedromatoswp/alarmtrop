@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "SecurityService",
           name: "Alarmetrop Ltda",
-          image: "/favicon.ico",
+          image: "/alarmetrop-logo.png",
           telephone: "+55 11 3966-5499",
           address: {
             "@type": "PostalAddress",
