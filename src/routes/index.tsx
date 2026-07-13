@@ -60,8 +60,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL =
-  "https://wa.me/5511999730104?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20Alarmetrop.";
+const WHATSAPP_URL = "https://wa.me/5511999730104";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -702,7 +701,11 @@ function Contact() {
               <ContactRow
                 icon={MapPin}
                 title="Endereço"
-                lines={["Rua Adelino Cardana, 293 — Sala 1708", "CEP 06401-147"]}
+                lines={[
+                  "Rua Adelino Cardana, 293 — Sala 1708",
+                  "CEP 06401-147",
+                  "Também possuímos sede própria no mesmo endereço cadastrado.",
+                ]}
               />
               <ContactRow
                 icon={MessageCircle}
@@ -828,6 +831,7 @@ function Footer() {
               <li>CNPJ 58.720.152/0001-49</li>
               <li>Rua Adelino Cardana, 293 — Sala 1708</li>
               <li>CEP 06401-147</li>
+              <li>Sede própria no mesmo endereço cadastrado.</li>
             </ul>
           </div>
 
